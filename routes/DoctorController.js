@@ -1,6 +1,6 @@
 import express from 'express'
 import bcrypt from 'bcrypt'
-import DoctorService from '../services/DoctorService.js'
+import DoctorService from '../services/DoctorService'
 
 let router = express.Router()
 

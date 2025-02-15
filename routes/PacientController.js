@@ -1,5 +1,5 @@
 import express from 'express'
-import PacientService from '../services/PacientService.js'
+import PacientService from '../services/PacientService'
 
 let router = express.Router()
 

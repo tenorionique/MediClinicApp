@@ -1,5 +1,5 @@
 import express from 'express';
-import AppointmentService from '../services/AppointmentService.js';
+import AppointmentService from '../services/AppointmentService';
 
 let router = express.Router();
 
