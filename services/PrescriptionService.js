@@ -1,7 +1,7 @@
-import PrescriptionRepository from '../repositories/PrescriptionRepository'
-import AppointmentService from '../services/AppointmentService'
-import PacientService from '../services/PacientService'
-import DoctorService from '../services/DoctorService'
+import PrescriptionRepository from '../repositories/PrescriptionRepository.js'
+import AppointmentService from '../services/AppointmentService.js'
+import PacientService from '../services/PacientService.js'
+import DoctorService from '../services/DoctorService.js'
 import fs from 'fs'
 import PDFDocument from 'pdfkit'
 

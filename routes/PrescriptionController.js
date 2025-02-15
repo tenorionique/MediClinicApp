@@ -1,5 +1,5 @@
 import express from 'express'
-import PrescriptionService from '../services/PrescriptionService'
+import PrescriptionService from '../services/PrescriptionService.js'
 import multer from 'multer'
 import process from 'process'
 import path from 'path'
