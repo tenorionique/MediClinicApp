@@ -3,13 +3,13 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const prescriptionSchema = new Schema({
-  prescriptionId: {
+  appointmentId: {
     type: String,
-    required: [true, 'prescriptionId is required.']
+    required: [true, 'Appointment ID is required.']
   },
   date: {
     type: Date,
-    required: false
+    required: [true, 'Date of prescription is required.']
   },
   medicine: {
     type: String,
@@ -20,8 +20,7 @@ const prescriptionSchema = new Schema({
     required: [true, 'Dosage is required.']
   },
   instructions: {
-    type: String,
-    required: false
+    type: String
   },
   createdAt: {
     type: Date,
