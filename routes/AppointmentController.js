@@ -1,11 +1,11 @@
 import express from 'express';
-import appointmentService from '../services/AppointmentService';
+import AppointmentService from '../services/AppointmentService.js';
 
 let router = express.Router();
 
 router.get('/appointments', async (req, res) => {
   try {
-    const appointments = await appointmentService.getAllAppointments();
+    const appointments = await AppointmentService.getAllAppointments();
     res.send(appointments);
   } catch(error) {
     res.status(500).send(error);
@@ -15,7 +15,7 @@ router.get('/appointments', async (req, res) => {
   router.get('/getAppointment/:id', async (req, res) => {
     const {id} = req.params;
     try {
-      const appointments = await appointmentService.getAppointmentById(id);
+      const appointments = await AppointmentService.getAppointmentById(id);
       res.send(appointments);
     } catch(error) {
       res.status(500).send(error);
@@ -25,7 +25,7 @@ router.get('/appointments', async (req, res) => {
   router.post('/postAppointment/:id', async (req, res) => {
     const {date, doctorId, pacientId} = req.body;
     try {
-      const appointments = await appointmentService.saveAppointment({date, doctorId, pacientId});
+      const appointments = await AppointmentService.saveAppointment({date, doctorId, pacientId});
       res.send(appointments);
     } catch(error) {
       res.status(500).send(error);
@@ -36,7 +36,7 @@ router.get('/appointments', async (req, res) => {
     const {date, doctorId, pacientId} = req.body;
     const {id} = req.params;
     try {
-      const appointments = await appointmentService.updateAppointment(id, {date, doctorId, pacientId});
+      const appointments = await AppointmentService.updateAppointment(id, {date, doctorId, pacientId});
       res.send(appointments);
     } catch(error) {
       res.status(500).send(error);
@@ -46,11 +46,11 @@ router.get('/appointments', async (req, res) => {
   router.delete('/appointments/:id', async (req, res) => {
     const {id} = req.params;
     try {
-      const appointments = await appointmentService.deleteAppointmentd(id);
+      const appointments = await AppointmentService.deleteAppointmentd(id);
       res.send(appointments);
     } catch(error) {
       res.status(500).send(error);
     }
   })
 
-export default router();
+export default router;

@@ -1,23 +1,23 @@
-import appointmentRepository from "../repositories/AppointmentRepository";
+import AppointmentRepository from "../repositories/AppointmentRepository";
 
 const getAllAppointments = async () => {
-  return appointmentRepository.getAllAppointments();
+  return AppointmentRepository.getAllAppointments();
 };
 
 const getAppointmentById = async (id) => {
-  return appointmentRepository.getAppointmentById(id);
+  return AppointmentRepository.getAppointmentById(id);
 };
 
 const saveAppointment = async ({date, doctorId, pacientId}) => {
-  return appointmentRepository.saveAppointment({date, doctorId, pacientId});
+  return AppointmentRepository.saveAppointment({date, doctorId, pacientId});
 };
 
 const updateAppointment = async (id, {date, doctorId, pacientId}) => {
-  return appointmentRepository.updateAppointment(id, {date, doctorId, pacientId});
+  return AppointmentRepository.updateAppointment(id, {date, doctorId, pacientId});
 };
 
 const deleteAppointment = async (id) => {
-  return appointmentRepository.deleteAppointment(id);
+  return AppointmentRepository.deleteAppointment(id);
 }
 
 const appointmentService = {
