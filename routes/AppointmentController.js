@@ -51,6 +51,22 @@ router.get('/appointments', async (req, res) => {
     } catch(error) {
       res.status(500).send(error);
     }
+  });
+
+  router.put('/reschedule/:id', async (req, res) => {
+    const {id} = req.params;
+    const {date} = req.body;
+
+    try {
+      const appointment = await AppointmentService.getAppointment(id);
+      appointment.date = date;
+
+      appointment = await AppointmentService.updateAppointment(id, {date});
+      res.send(appointment);
+      res.send(appointments);
+    } catch(error) {
+      res.status(500).send(error)
+    }
   })
 
 export default router;
